@@ -1,0 +1,15 @@
+--Network Creation and inspection---
+docker network create netoct25
+docker network inspect netoct25
+
+
+--Backend continers--
+docker build -t mysqloct25:v1 .
+
+docker run --name sqloct25 --net netoct25 --hostname sqloct25 -d -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=demodboct25 mysqldboct25:v1
+
+
+--Frontend containers--
+docker build -t excontoct25:v1 .
+
+docker run --name excontoct25 --net netoct25 --hostname excontoct25 -d -p 8081:8081 
