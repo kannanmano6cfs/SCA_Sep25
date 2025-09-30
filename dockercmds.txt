@@ -12,4 +12,5 @@ docker run --name sqloct25 --net netoct25 --hostname sqloct25 -d -e MYSQL_ROOT_P
 --Frontend containers--
 docker build -t excontoct25:v1 .
 
-docker run --name excontoct25 --net netoct25 --hostname excontoct25 -d -p 8081:8081 
+
+docker run --name excontoct25 --net netoct25 --hostname excontoct25 -d -p 8081:8081 excontoct25:v1
