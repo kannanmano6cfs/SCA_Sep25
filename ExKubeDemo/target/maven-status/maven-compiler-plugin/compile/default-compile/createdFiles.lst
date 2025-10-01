@@ -1,2 +1,4 @@
 com\learning\exkubedemo\ExKubeDemoApplication.class
 com\learning\exkubedemo\Controller\greetController.class
+com\learning\exkubedemo\Model\Product.class
+com\learning\exkubedemo\Repository\greetRepository.class

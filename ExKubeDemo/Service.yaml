@@ -1,12 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: exkubesvc
+  name: fendsvc
   labels:
     app: greet
+    baxter: frontend
 spec:
   type: NodePort
   ports:
     - port: 8082
   selector:
     app: greet
+    baxter: frontend
