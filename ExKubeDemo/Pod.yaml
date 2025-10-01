@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exkubedemo
+  labels:
+    app: greet
+spec:
+  containers:
+    - name: exkubecont
+      image: exkubedemo:v1
+      ports:
+        - containerPort: 8082
