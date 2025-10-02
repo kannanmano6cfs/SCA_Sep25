@@ -1,0 +1,14 @@
+kubectl get nodes
+
+kubectl get pods
+
+kubectl get pods --all-namespaces
+
+kubectl get pods -A
+
+kubectl apply -f Pod.yaml
+
+kubectl apply -f Service.yaml
+
+kubectl get pods, svc
+
