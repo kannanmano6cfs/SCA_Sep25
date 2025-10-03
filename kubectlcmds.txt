@@ -1,3 +1,19 @@
+Kubernetes Cluster Deployment Commands:
+-->Use these commands in Master Node (VM/Phy)
+  sudo kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address 172.20.10.31 | tee kubeadm.init.out
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+For Antrea
+  kubectl apply -f https://github.com/antrea-io/antrea/releases/download/v1.1.0/antrea.yml
+For Calico
+  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.3/manifests/calico.yaml
+
+--> use these commands in Worker Node(VM/Phy)
+sudo kubeadm join 172.20.10.31:6443 --token XYZetc.XYZetc --discovery-token-ca-cert-hash sha256:XYZetc
+(This is just sample command, you have to use the actual command from kubeadm.init.out when running kubeadm inint commmand in master node)
+
+-->Verify and Work with Kubernetes cluster using these below commands
 kubectl get nodes
 
 kubectl get pods
@@ -11,4 +27,8 @@ kubectl apply -f Pod.yaml
 kubectl apply -f Service.yaml
 
 kubectl get pods, svc
+
+
+
+
 
